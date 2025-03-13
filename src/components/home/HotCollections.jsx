@@ -59,10 +59,9 @@ const HotCollections = () => {
             </div>
           </div>
           <Slider {...settings}>
-
-    {Loading ? new Array(data.length).map(<Skeleton width={100} height={100} borderRadius={5}/>) : 
-     data.map((card) => (
-      <div>
+   {  data.map((card) => (
+    {Loading ? <Skeleton /> : 
+       <div>
         <div key={card.id}>
         <div className="nft_coll">
           <div className="nft_wrap">
@@ -85,6 +84,8 @@ const HotCollections = () => {
         </div>
       </div>
       </div>
+     }
+     
     ))
     }
          
