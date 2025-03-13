@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Skeleton from '../UI/Skeleton'
 
 const HotCollections = () => {
-   const [Loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
   const settings = {
     dots: true,
     infinite: true,
@@ -59,9 +59,19 @@ const HotCollections = () => {
             </div>
           </div>
           <Slider {...settings}>
-   {  data.map((card) => (
-    {Loading ? <Skeleton /> : 
-       <div>
+        {loading ?
+        new Array(4)
+        .fill()
+        .map((_, index) => (
+          <Skeleton
+            key={index}
+            width={'100%'}
+            height={300}
+            borderRadius={5}
+          />
+        ))  
+   : data.map((card) => (
+      <div>
         <div key={card.id}>
         <div className="nft_coll">
           <div className="nft_wrap">
@@ -84,8 +94,6 @@ const HotCollections = () => {
         </div>
       </div>
       </div>
-     }
-     
     ))
     }
          
