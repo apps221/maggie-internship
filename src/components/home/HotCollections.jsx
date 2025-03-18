@@ -71,8 +71,8 @@ const HotCollections = () => {
           />
         ))  
    : data.map((card) => (
-      <div>
-        <div key={card.id}>
+      <div key = {card.id}>
+        <div>
         <div className="nft_coll">
           <div className="nft_wrap">
             <Link to={`/item-details/${card.nftId}`}>
