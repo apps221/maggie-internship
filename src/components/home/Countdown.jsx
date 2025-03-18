@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const Countdown = ({expiryDate}) => {
 const [intervalId, setIntervalId] = useState(null)
     useEffect(() => {
-      //  updateTimer(); if you want to make sure it runs on mount and not delayed after the interval is set to 1 second
+      updateTimer(); // if you want to make sure it runs on mount and not delayed after the interval is set to 1 second
   const id = setInterval(() => {
             updateTimer();
         }, 1000)
