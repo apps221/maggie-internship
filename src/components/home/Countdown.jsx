@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react'
 
 const Countdown = ({expiryDate}) => {
+const [intervalId, setIntervalId] = useState(null)
     useEffect(() => {
-        updateTimer();
+      //  updateTimer(); if you want to make sure it runs on mount and not delayed after the interval is set to 1 second
+  const id = setInterval(() => {
+            updateTimer();
+        }, 1000)
+        setIntervalId(id)
+        return () => {
+            clearInterval(id)
+        }
     }, [])
-    let cancelId;
     const [time, setTime] = useState("")
     function updateTimer() {
+        console.log("this ran")
         let countdownStart = expiryDate - Date.now()
         if (countdownStart < 0) {
             countdownStart = 0;
-            cancelAnimationFrame(cancelId)
-            cancelId = null;
+           clearInterval(intervalId);
+            setTime("Expired")
+            return;
         }
         let secondsLeft = countdownStart / 1000;
         let secondsText = Math.floor(secondsLeft) % 60;
@@ -20,9 +29,6 @@ const Countdown = ({expiryDate}) => {
         let minutesText = Math.floor(minutesLeft % 60);
         let hoursText = Math.floor(hoursLeft);
      setTime(`${hoursText}h ${minutesText}m ${secondsText}s`)
-        if (cancelId) {
-            cancelId=requestAnimationFrame(updateTimer)
-        }
     }
     return (
         <div className="de_countdown">{time}</div>
