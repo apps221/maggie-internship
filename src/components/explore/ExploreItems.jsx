@@ -31,6 +31,7 @@ const ExploreItems = () => {
   fetchExploreItems();
   }, [])
 
+
   async function filterItems(filter) {
     setLoading(true)
  const response = await axios.get(`https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${filter}`)
@@ -38,6 +39,7 @@ const ExploreItems = () => {
  setLoading(false)
  
   }
+
 
   return (
     <>
@@ -64,12 +66,14 @@ const ExploreItems = () => {
       data.slice(0, itemCount).map((card) => (
         <div
           key={card.id}
+          key={card.id}
           className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
           style={{ display: "block", backgroundSize: "cover" }}
         >
 
          <Card data = {card} />
        
+
 
         </div>
       ))}
