@@ -4,10 +4,35 @@ import AuthorImage from "../../images/author_thumbnail.jpg";
 import nftImage from "../../images/nftImage.jpg";
 import axios from 'axios';
 import Countdown from "./Countdown";
+import Slider from "react-slick";
+import Skeleton from "../UI/Skeleton";
 
 const NewItems = () => {
   const [loading, setLoading] = useState([])
   const [data, setData] = useState([])
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 4, 
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  
   useEffect(()=> {
     async function fetchNewItems() {
       try {
@@ -34,8 +59,20 @@ const NewItems = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          {data.map((card) => (
-            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={card.id}>
+          <Slider {...settings}>
+          {loading ?
+        new Array(4)
+        .fill()
+        .map((_, index) => (
+          <Skeleton
+            key={index}
+            width={'100%'}
+            height={300}
+            borderRadius={5}
+          />
+        ))  :
+          data.map((card) => (
+            <div key={card.id}>
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
@@ -90,6 +127,7 @@ const NewItems = () => {
               </div>
             </div>
           ))}
+          </Slider>
         </div>
       </div>
     </section>
