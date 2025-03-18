@@ -6,7 +6,7 @@ import axios from 'axios';
 import Countdown from "./Countdown";
 import Slider from "react-slick";
 import Skeleton from "../UI/Skeleton";
-
+import Card from "../Card";
 const NewItems = () => {
   const [loading, setLoading] = useState([])
   const [data, setData] = useState([])
@@ -71,7 +71,7 @@ const NewItems = () => {
             borderRadius={5}
           />
         ))  :
-<<<<<<< Updated upstream
+
           data.map((card) => (
             <div key={card.id}>
               <div className="nft__item">
@@ -128,13 +128,13 @@ const NewItems = () => {
               </div>
             </div>
           ))}
-=======
-        data.map((card) => (
+
+        {data.map((card) => (
           <div key={card.id}>
             <Card data = {card} />
             </div>
       ))}
->>>>>>> Stashed changes
+
           </Slider>
         </div>
       </div>
