@@ -14,7 +14,6 @@ const [intervalId, setIntervalId] = useState(null)
     }, [])
     const [time, setTime] = useState("")
     function updateTimer() {
-        console.log("this ran")
         let countdownStart = expiryDate - Date.now()
         if (countdownStart < 0) {
             countdownStart = 0;
