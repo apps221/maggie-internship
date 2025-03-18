@@ -9,12 +9,6 @@ const Card = ({data: card}) => {
   return (
         <div key ={card.id}>
 
-const Card = ({data}) => {
-  return (
-    
-    data.map((card) => (
-        <div key={card.id}>
-
           <div className="nft__item">
             <div className="author_list_pp">
               <Link
@@ -51,8 +45,7 @@ const Card = ({data}) => {
 
               <Link to={`/item-details/${card.nftId}`}>
 
-              <Link to="/item-details">
-
+      
                 <img
                   src={card.nftImage}
                   className="lazy nft__item_preview"
@@ -64,8 +57,6 @@ const Card = ({data}) => {
 
               <Link to={`/item-details/${card.nftId}`}>
 
-              <Link to="/item-details">
-
                 <h4>{card.title}</h4>
               </Link>
               <div className="nft__item_price">{card.price} ETH</div>
@@ -75,13 +66,8 @@ const Card = ({data}) => {
               </div>
             </div>
           </div>
-
           </div>
-  )
-
-        </div>
-      )))
-
+)
 }
 
-export default Card
+export default Card;

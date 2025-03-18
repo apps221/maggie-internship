@@ -66,7 +66,6 @@ const ExploreItems = () => {
       data.slice(0, itemCount).map((card) => (
         <div
           key={card.id}
-          key={card.id}
           className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
           style={{ display: "block", backgroundSize: "cover" }}
         >
