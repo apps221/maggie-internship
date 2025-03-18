@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import nftImage from "../../images/nftImage.jpg";
 import axios from 'axios';
+import Countdown from "./Countdown";
 
 const NewItems = () => {
   const [loading, setLoading] = useState([])
@@ -47,7 +48,7 @@ const NewItems = () => {
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
-                <div className="de_countdown">5h 30m 32s</div>
+                {card.expiryDate && (<Countdown expiryDate = {card.expiryDate}/>)}
 
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
