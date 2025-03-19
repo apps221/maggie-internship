@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NFT from "../../images/nft.png";
 import backgroundImage from "../../images/bg-shape-1.jpg";
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Landing = () => {
+  useEffect(()=> {
+    AOS.init();
+  }, [])
   return (
     <section
       id="section-hero"
@@ -22,7 +26,7 @@ const Landing = () => {
                   Ultraverse Market
                 </span>
               </h6>
-              <div className="spacer-10"></div>
+              <div className="spacer-10" data-aos="fade-up"  data-aos-duration="3000"></div>
               <h1>Create, sell or collect digital items.</h1>
               <p className="lead">
                 Unit of data stored on a digital ledger, called a blockchain,
