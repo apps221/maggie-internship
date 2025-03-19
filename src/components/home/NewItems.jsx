@@ -74,7 +74,8 @@ const NewItems = () => {
         ))  :
 
           data.map((card) => (
-            <div key={card.id}>
+            <div key={card.id} data-aos="fade-left"
+      data-aos-offset="300">
              <Card data = {card} />
             </div>
           ))}
