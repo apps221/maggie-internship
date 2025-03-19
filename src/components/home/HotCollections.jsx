@@ -71,7 +71,9 @@ const HotCollections = () => {
           />
         ))  
    : data.map((card) => (
-      <div key = {card.id}>
+      <div key = {card.id} data-aos="fade-left"
+      data-aos-offset="300"
+   >
         <div>
         <div className="nft_coll">
           <div className="nft_wrap">
