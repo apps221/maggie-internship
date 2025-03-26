@@ -14,7 +14,7 @@ const BrowseByCategory = () => {
           </div>
           <div className="col-md-2 col-sm-4 col-6 mb-sm-30">
             <Link to="/explore" className="icon-box style-2 rounded"data-aos="fade-left"
-      data-aos-offset="300">
+      data-aos-offset="200">
               <i className="fa fa-image"></i>
               <span>Art</span>
             </Link>
