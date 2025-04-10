@@ -130,6 +130,9 @@ const Footer = () => {
                 id="form_subscribe"
                 method="post"
                 name="form_subscribe"
+                onSubmit={() =>
+                  alert("This feature has not been implemented yet")
+                }
               >
                 <div className="col text-center">
                   <input
