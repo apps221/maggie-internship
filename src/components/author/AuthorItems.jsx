@@ -24,7 +24,7 @@ const AuthorItems = ({data}) => {
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link to="">
-                    <img className="lazy" src={card.authorImage} alt="" />
+                    <img className="lazy" src={data.authorImage} alt="" />
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>

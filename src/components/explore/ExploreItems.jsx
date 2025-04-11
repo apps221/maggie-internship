@@ -79,11 +79,12 @@ const ExploreItems = () => {
 
         </div>
       ))}
+      {itemCount < data.length && (
       <div className="col-md-12 text-center">
         <Link to="" id="loadmore" className="btn-main lead" onClick={()=>setItemCount(itemCount + 4)}>
           Load more
         </Link>
-      </div>
+      </div>)}
     </>
   );
 };
