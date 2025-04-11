@@ -26,6 +26,16 @@ const Nav = () => {
                     </Link>
                   </div>
                 </div>
+                <div className="de-flex-col">
+                  <input
+                    id="quick_search"
+                    className="xs-hide no-cursor"
+                    name="quick_search"
+                    placeholder="search item here..."
+                    type="text"
+                   disabled
+                  />
+                </div>
               </div>
               <div className="de-flex-col header-col-mid">
                 <ul id="mainmenu">
